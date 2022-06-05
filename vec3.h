@@ -1,3 +1,9 @@
+/*
+
+Defines a three-dimensional vector with operations.
+
+*/
+
 #ifndef VEC3_H
 #define VEC3_H
 
@@ -59,13 +65,19 @@ inline std::ostream& operator<<(std::ostream &out, const vec3 &v) {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
 }
 
+//Addition
+
 inline vec3 operator+(const vec3 &u, const vec3 &v) {
     return vec3(u.e[0] + v.e[0], u.e[1] + v.e[1], u.e[2] + v.e[2]);
 }
 
+//Subtraction
+
 inline vec3 operator-(const vec3 &u, const vec3 &v) {
     return vec3(u.e[0] - v.e[0], u.e[1] - v.e[1], u.e[2] - v.e[2]);
 }
+
+//Multiplication operations
 
 inline vec3 operator*(const vec3 &u, const vec3 &v) {
     return vec3(u.e[0] * v.e[0], u.e[1] * v.e[1], u.e[2] * v.e[2]);
@@ -79,20 +91,25 @@ inline vec3 operator*(const vec3 &v, double t) {
     return t * v;
 }
 
+//Division
+
 inline vec3 operator/(vec3 v, double t) {
     return (1/t) * v;
 }
 
+//Dot product
 inline double dot(const vec3 &u, const vec3 &v) {
     return u.e[0] * v.e[0] + u.e[1] * v.e[1] + u.e[2] * v.e[2];
 }
 
+//Cross product
 inline vec3 cross(const vec3 &u, const vec3 &v) {
     return vec3(u.e[1] * v.e[2] - u.e[2] * v.e[1],
                 u.e[2] * v.e[0] - u.e[0] * v.e[2],
                 u.e[0] * v.e[1] - u.e[1] * v.e[0]);
 }
 
+//Gets unit vector
 inline vec3 unit_vector(vec3 v) {
     return v / v.length();
 }

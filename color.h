@@ -1,3 +1,9 @@
+/*
+
+Utility function writing a single pixel's color to the output stream
+
+*/
+
 #ifndef COLOR_H
 #define COLOR_H
 
